@@ -1,0 +1,52 @@
+
+********************** ESSENTIAL FUNCTIONS (EXCEL)*************************
+
+
+--------------------------- SELECT ------------------------------
+Sheets("SHEET NAME").Select
+Range("CELL").Select
+Range("CELL:CELL").Select
+Range("TABLE NAME[COLUMN NAME]").Select
+Range("TABLE NAME[[COLUMN NAME]:[COLUMN NAME]]").Select
+
+--------------------------- COPY/CUT/DELETE ------------------------------
+/SIMPLE COPY ANY CELL OR RANGE
+Selection.Copy  
+
+/PASTE AS VALUES ANY THING IN CLIPBOARD
+Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+
+/DELETE ENTIRE ROW IN SELECTION
+Selection.EntireRow.Delete
+
+/SIMPLE CLEAR (SUPR KEY)
+Selection.ClearContents
+
+--------------------------- OPEN/CLOSE/CREATE---------------------------------
+
+/TO OPEN ANY FILE COMPATIBLE WITH EXCEL
+Workbooks.Open Filename:= _
+        "FILE NAME / OR LINK / OR DIRECTORY"
+
+/CLOSE THE ACTUAL FILE 
+ActiveWorkbook.Close
+
+/CREATE AND SAVE A NEW FILE IN THE DIRECTORY
+Workbooks.Add.SaveAs Filename:= _
+        "LINK OR DIRECTORY AND FILE NAME" _
+        , FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False
+
+--------------------------- ACTIVATE ------------------------------------
+
+/OPEN ANY FILE (AFTER NAME FOLLOW THE EXTENSION 
+Windows("FILE NAME.xlsm").Activate
+
+
+--------------------------- EXTRAS -------------------------------------------
+On Error GoTo 
+MsgBox "Message"
+
+
+
+   
